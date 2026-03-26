@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om os | Milky</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sdw6rit.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #fff0fa 0%, #ffe6f0 100%);
+            padding: 3.5rem 0 2.5rem 0;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            color: #a80050;
+            font-family: 'cafe-romantique', sans-serif;
+            margin-bottom: 0.7em;
+        }
+        .about-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2.5rem 0 2rem 0;
+            overflow: hidden;
+            position: relative;
+            min-height: 260px;
+        }
+        .about-slider-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+            will-change: transform;
+        }
+        .about-slider-img {
+            width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 1.5em;
+            box-shadow: 0 2px 16px #e0b6d7;
+            margin: 0 0.5rem;
+            background: #fff;
+            position: relative;
+            transition: transform 0.4s, box-shadow 0.3s;
+        }
+        /* Rotation håndteres nu af JS for alle billeder */
+        .about-slider-img:hover {
+            z-index: 2;
+            box-shadow: 0 6px 32px #e0b6d7;
+            transform: scale(1.06) rotate(0deg);
+        }
+        /* Fjernede pilenes CSS */
+        @media (max-width: 900px) {
+            .about-slider-img { width: 140px; height: 90px; }
+        }
+        @media (max-width: 600px) {
+            .about-slider-img { width: 90px; height: 60px; }
+        }
+        .about-content {
+            max-width: 1100px;
+            margin: 2.5rem auto 3.5rem auto;
+            background: #fff0fa;
+            border-radius: 1.5em;
+            box-shadow: 0 2px 12px #f3c6e6;
+            padding: 2.5rem 2.7rem;
+            font-size: 1.18rem;
+            color: #6d3b6d;
+            line-height: 1.7;
+        }
+        .about-content h2 {
+            color: #a80050;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'cafe-romantique', sans-serif;
+        }
+        @media (max-width: 900px) {
+            .about-slider img { width: 220px; height: 140px; }
+            .about-content { padding: 1.2rem 0.7rem; }
+        }
+        @media (max-width: 600px) {
+            .about-slider { gap: 0.7rem; }
+            .about-slider img { width: 120px; height: 80px; }
+            .about-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="milky-header">
+        <nav class="milky-nav">
+            <ul class="nav-left">
+                <li><a href="milky.html">Forside</a></li>
+                <li><a href="produkter.html">Produkter</a></li>
+                <li><a href="om.html" class="active">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="logo-center">
+                <img src="Brown and White Playful Bubble Tea Logo.svg" alt="Milky logo" class="logo">
+            </div>
+            <div class="nav-right" style="display:flex;align-items:center;">
+                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;" style="margin-right:6em;">
+                    <label for="soegInput" class="soeg-label"></label>
+                    <span class="soeg-ikon" aria-hidden="true">🔍</span>
+                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off" style="border:2px solid #a80050;border-radius:2em;padding:0.5em 1.2em;font-size:1em;outline:none;">
+                </form>
+                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button" style="margin-right:1.5em;">
+                    <span class="ikon-bruger"></span>
+                </button>
+                <div id="kurvHeader" style="margin-right:2em;">
+                    <button id="kurvBtn" type="button" class="ikon-btn" title="Kurv">
+                        <span class="ikon-kurv"></span>
+                        <span id="kurvAntal" style="display:inline-block;min-width:1.7em;height:1.7em;line-height:1.7em;background:#ff7eb9;color:#fff;border-radius:50%;font-size:1em;text-align:center;vertical-align:middle;margin-left:0.2em;box-shadow:0 1px 4px #f3c6e6;font-weight:bold;">0</span>
+                    </button>
+                    <div id="kurvDropdown" class="hidden">
+                        <h3>Din kurv</h3>
+                        <ul id="kurvListe"></ul>
+                        <div id="kurvTotal"></div>
+                        <button id="rydKurv" type="button">Ryd kurv</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="about-hero">
+             <!-- Milkshake divider illustration over kontakt os -->
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-25 kl. 17.22.32.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+        </div>
+            <h1>Om Milky</h1>
+            <div class="about-slider">
+                <div class="about-slider-track" id="aboutSliderTrack"></div>
+            </div>
+              <section class="about-content">
+            <h2>Vores Historie</h2>
+            <p>
+                Milky blev grundlagt i 2022 af tre passionerede venner med en kærlighed til milkshakes og gode oplevelser. Vores mission er at bringe glæde, farver og smag ind i hverdagen – én milkshake ad gangen!
+                Vi startede i et lille lokale i Aalborg, men vores drøm voksede hurtigt. I dag har vi et hyggeligt univers fyldt med søde fristelser, legende stemning og et fællesskab, hvor alle er velkomne. Vi tror på kvalitet, kreativitet og at forkæle vores gæster med de bedste råvarer og et smil på læben.
+            </p>
+            <h2>Vores Værdier</h2>
+           <p style="font-size:1.08em;line-height:1.7;">
+                Hos os er kvalitet, glæde og fællesskab i centrum. Vi bruger kun de bedste råvarer, skaber et hyggeligt miljø og ønsker at give alle vores gæster en oplevelse fyldt med smil og gode stunder. Vi tror på, at en god milkshake bringer folk sammen – og vi glæder os til at byde dig velkommen!
+            </p>
+            <h2>Teamet bag Milky</h2>
+            <p>
+                Vores team består af dedikerede milkshake-entusiaster, baristaer og dessertmagere, der alle brænder for at give dig en fantastisk oplevelse. Vi elsker at lege med smage, farver og dekorationer – og vi glæder os til at byde dig velkommen i vores univers!
+            </p>
+            <h2>Besøg os</h2>
+            <p>
+                Kig forbi vores butik på Milkshakevej 42, 9000 Aalborg – eller følg os på Instagram for inspiration, konkurrencer og søde nyheder!
+            </p>
+            <h2>Åbningstider</h2>
+            <ul style="list-style:none;padding:0;font-size:1.08em;line-height:1.7;">
+                <li><b>Mandag:</b> Lukket</li>
+                <li><b>Tirsdag:</b> 12:00 – 18:00</li>
+                <li><b>Onsdag:</b> 12:00 – 18:00</li>
+                <li><b>Torsdag:</b> 12:00 – 20:00</li>
+                <li><b>Fredag:</b> 12:00 – 21:00</li>
+                <li><b>Lørdag:</b> 11:00 – 21:00</li>
+                <li><b>Søndag:</b> 11:00 – 18:00</li>
+            </ul>
+        </section>
+    </main>
+      
+     <!-- Milkshake divider illustration over kontakt os -->
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-26 kl. 02.16.42.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+        </div>
+        <div class="footer-copyright" style="text-align:center;">
+            &copy; 2026 Milky. Alle rettigheder forbeholdes.
+    </footer>
+    <script>
+        const aboutBilleder = [
+            "Skærmbillede 2026-03-25 kl. 11.25.29.png",
+            "Skærmbillede 2026-03-25 kl. 11.29.31.png",
+            "Skærmbillede 2026-03-25 kl. 11.31.55.png",
+            "Skærmbillede 2026-03-25 kl. 11.32.45.png",
+            "Skærmbillede 2026-03-25 kl. 11.33.58.png",
+            "Skærmbillede 2026-03-25 kl. 11.36.35.png"
+        ];
+        const aboutSliderTrack = document.getElementById('aboutSliderTrack');
+        // For smooth scroll effect, duplicate images for seamless loop
+        function renderSlider() {
+            aboutSliderTrack.innerHTML = '';
+            const total = aboutBilleder.length;
+            // Gentag billederne mange gange, så der altid er billeder synlige
+            const repeat = 10; // juster for at sikre nok billeder
+            for (let i = 0; i < total * repeat; i++) {
+                const imgIndex = i % total;
+                const img = document.createElement('img');
+                img.src = aboutBilleder[imgIndex];
+                img.alt = 'Milky billede ' + (imgIndex + 1);
+                img.className = 'about-slider-img';
+                // Tilføj tilfældig rotation mellem -12 og 12 grader
+                const rot = Math.floor(Math.random() * 25) - 12;
+                img.style.transform = `rotate(${rot}deg)`;
+                aboutSliderTrack.appendChild(img);
+            }
+            aboutSliderTrack.style.width = (total * repeat * 270) + 'px'; // 260px img + 10px margin
+        }
+
+        let scrollPos = 0;
+        function animateSlider() {
+            scrollPos += 1.2; // langsommere
+            const totalWidth = aboutBilleder.length * 10 * 270; // 260px img + 10px margin
+            if (scrollPos >= totalWidth) {
+                scrollPos = 0;
+            }
+            aboutSliderTrack.style.transform = `translateX(${-scrollPos}px)`;
+            requestAnimationFrame(animateSlider);
+        }
+
+        renderSlider();
+        animateSlider();
+    </script>
+</body>
+</html>
