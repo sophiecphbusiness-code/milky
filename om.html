@@ -89,7 +89,7 @@
     <header class="milky-header">
         <nav class="milky-nav">
             <ul class="nav-left">
-                <li><a href="milky.html">Forside</a></li>
+                <li><a href="index.html">Forside</a></li>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="om.html" class="active">Om os</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
@@ -97,29 +97,21 @@
             <div class="logo-center">
                 <img src="Brown and White Playful Bubble Tea Logo.svg" alt="Milky logo" class="logo">
             </div>
-            <div class="nav-right" style="display:flex;align-items:center;">
-                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;" style="margin-right:6em;">
-                    <label for="soegInput" class="soeg-label"></label>
+            <div class="nav-right">
+                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;">
+                    <label for="soegInput" class="soeg-label">Søg</label>
                     <span class="soeg-ikon" aria-hidden="true">🔍</span>
-                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off" style="border:2px solid #a80050;border-radius:2em;padding:0.5em 1.2em;font-size:1em;outline:none;">
+                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off">
                 </form>
-                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button" style="margin-right:1.5em;">
+                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button">
                     <span class="ikon-bruger"></span>
                 </button>
-                <div id="kurvHeader" style="margin-right:2em;">
+                <div id="kurvHeader">
                     <button id="kurvBtn" type="button" class="ikon-btn" title="Kurv">
                         <span class="ikon-kurv"></span>
-                        <span id="kurvAntal" style="display:inline-block;min-width:1.7em;height:1.7em;line-height:1.7em;background:#ff7eb9;color:#fff;border-radius:50%;font-size:1em;text-align:center;vertical-align:middle;margin-left:0.2em;box-shadow:0 1px 4px #f3c6e6;font-weight:bold;">0</span>
+                        <span id="kurvAntal">0</span>
                     </button>
-                    <div id="kurvDropdown" class="hidden">
-                        <h3>Din kurv</h3>
-                        <ul id="kurvListe"></ul>
-                        <div id="kurvTotal"></div>
-                        <button id="rydKurv" type="button">Ryd kurv</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+              
     </header>
         <section class="about-hero">
              <!-- Milkshake divider illustration over kontakt os -->
