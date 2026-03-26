@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Milky</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sdw6rit.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff0fa 0%, #ffe6f0 100%);
+            min-height: 100vh;
+        }
+        .kontakt-hero {
+            text-align: center;
+            padding: 3rem 0 1.5rem 0;
+        }
+        .kontakt-hero h1 {
+            font-size: 3rem;
+            color: #a80050;
+            font-family: 'cafe-romantique', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .kontakt-hero p {
+            color: #6d3b6d;
+            font-size: 1.2rem;
+            margin-bottom: 1.5em;
+        }
+        .kontakt-box {
+            background: #fff0fa;
+            border-radius: 2em;
+            box-shadow: 0 4px 24px #f3c6e6;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .kontakt-box::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background: url('Brown and White Playful Bubble Tea Logo.svg') no-repeat center/contain;
+            z-index: 2;
+        }
+        .kontakt-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .kontakt-form label {
+            font-weight: bold;
+            color: #a80050;
+            margin-bottom: 0.3rem;
+        }
+        .kontakt-form input, .kontakt-form textarea {
+            border: 2px solid #f3c6e6;
+            border-radius: 1em;
+            padding: 0.8em 1em;
+            font-size: 1.1rem;
+            font-family: inherit;
+            background: #fff;
+            color: #6d3b6d;
+            outline: none;
+            transition: border 0.2s;
+        }
+        .kontakt-form input:focus, .kontakt-form textarea:focus {
+            border: 2px solid #a80050;
+        }
+        .kontakt-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .kontakt-form button {
+            background: linear-gradient(90deg, #a80050 0%, #ffb6e6 100%);
+            color: #fff;
+            border: none;
+            border-radius: 2em;
+            padding: 0.9em 2.2em;
+            font-size: 1.2rem;
+            font-family: 'cafe-romantique', sans-serif;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 2px 12px #f3c6e6;
+            margin-top: 0.5em;
+            transition: background 0.2s, color 0.2s;
+        }
+        .kontakt-form button:hover {
+            background: linear-gradient(90deg, #d9006c 0%, #ffb6e6 100%);
+        }
+        .kontakt-info {
+            margin-top: 2.5rem;
+            text-align: center;
+            color: #6d3b6d;
+            font-size: 1.1rem;
+        }
+        .kontakt-info strong {
+            color: #a80050;
+        }
+        .milkshake-illustration {
+            margin: 2.5rem auto 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .milkshake-illustration img {
+            width: 120px;
+            filter: drop-shadow(0 6px 24px #f3c6e6);
+            animation: shake 2.5s infinite cubic-bezier(.68,-0.55,.27,1.55);
+            transform-origin: 50% 80%;
+            display: inline-block;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(-6deg); }
+            10% { transform: rotate(7deg); }
+            20% { transform: rotate(-4deg); }
+            30% { transform: rotate(5deg); }
+            40% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+            60% { transform: rotate(-1deg); }
+            70% { transform: rotate(1deg); }
+            80% { transform: rotate(-2deg); }
+            90% { transform: rotate(2deg); }
+        }
+        @media (max-width: 700px) {
+            .kontakt-box { max-width: 98vw; padding: 1.2rem 0.5rem; }
+            .milkshake-illustration img { width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="milky-header">
+        <nav class="milky-nav">
+            <ul class="nav-left">
+                <li><a href="milky.html">Forside</a></li>
+                <li><a href="produkter.html">Produkter</a></li>
+                <li><a href="om.html">Om os</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+            <div class="logo-center">
+                <img src="Brown and White Playful Bubble Tea Logo.svg" alt="Milky logo" class="logo">
+            </div>
+            <div class="nav-right" style="display:flex;align-items:center;">
+                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;" style="margin-right:6em;">
+                    <label for="soegInput" class="soeg-label"></label>
+                    <span class="soeg-ikon" aria-hidden="true">🔍</span>
+                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off" style="border:2px solid #a80050;border-radius:2em;padding:0.5em 1.2em;font-size:1em;outline:none;">
+                </form>
+                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button" style="margin-right:1.5em;">
+                    <span class="ikon-bruger"></span>
+                </button>
+                <div id="kurvHeader" style="margin-right:2em;">
+                    <button id="kurvBtn" type="button" class="ikon-btn" title="Kurv">
+                        <span class="ikon-kurv"></span>
+                        <span id="kurvAntal" style="display:inline-block;min-width:1.7em;height:1.7em;line-height:1.7em;background:#ff7eb9;color:#fff;border-radius:50%;font-size:1em;text-align:center;vertical-align:middle;margin-left:0.2em;box-shadow:0 1px 4px #f3c6e6;font-weight:bold;">0</span>
+                    </button>
+                    <div id="kurvDropdown" class="hidden">
+                        <h3>Din kurv</h3>
+                        <ul id="kurvListe"></ul>
+                        <div id="kurvTotal"></div>
+                        <button id="rydKurv" type="button">Ryd kurv</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Milkshake divider illustration over kontakt os -->
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-25 kl. 17.22.32.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+        </div>
+        <section class="kontakt-hero" style="margin-top:-1.5rem; padding-top:0;">
+            <h1>Kontakt os</h1>
+            <p>Vi elsker at høre fra dig! Har du spørgsmål, ris, ros eller vil du bare sende os et virtuelt kram?<br>Udfyld formularen eller brug kontaktinfo herunder.</p>
+        </section>
+        <section class="kontakt-box">
+            <form class="kontakt-form" id="kontaktForm" autocomplete="off">
+                <label for="navn">Navn</label>
+                <input type="text" id="navn" name="navn" placeholder="Dit navn" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="din@email.dk" required>
+                <label for="besked">Besked</label>
+                <textarea id="besked" name="besked" placeholder="Skriv din besked her..." required></textarea>
+                <button type="submit">Send besked</button>
+            </form>
+            <div id="takBesked" style="display:none; text-align:center; color:#a80050; font-size:1.3rem; font-family:'cafe-romantique',sans-serif; margin-top:1.5em;">
+                Tak for din besked!<br>Vi vender tilbage hurtigst muligt med et smil.
+            </div>
+        </section>
+        <div class="kontakt-info">
+            <div><strong>Adresse:</strong> Milkshakevej 42, 9000 Aalborg</div>
+            <div><strong>Telefon:</strong> <a href="tel:12345678">12 34 56 78</a></div>
+            <div><strong>Email:</strong> <a href="mailto:info@milky.dk">info@milky.dk</a></div>
+            <div style="margin-top:1em;">Følg os på <a href="#" style="color:#a80050;font-weight:bold;">Instagram</a> og <a href="#" style="color:#a80050;font-weight:bold;">Facebook</a> for søde nyheder!</div>
+        </div>
+        <!-- Milkshake illustration removed as requested -->
+        <!-- <div class="milkshake-illustration">
+            <img src="Brown and White Playful Chocolate Dessert Instagram Post.png" alt="Milkshake illustration">
+        </div> -->
+        <!-- ...existing code... -->
+    </main>
+        <script>
+        // Vis tak-besked efter formularen er sendt
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('kontaktForm');
+            var tak = document.getElementById('takBesked');
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    form.style.display = 'none';
+                    tak.style.display = 'block';
+                });
+            }
+        });
+        </script>
+    <!-- Milkshake divider illustration over kontakt os -->
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-25 kl. 17.22.32.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+        </div>
+        <div class="footer-copyright" style="text-align:center;">
+            &copy; 2026 Milky. Alle rettigheder forbeholdes.
+    </footer>
+</body>
+</html>
