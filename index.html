@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+        <script src="milky-canvas-wheel.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milky - Milkshakes & Mere</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="milky-carousel.js" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/sdw6rit.css">
+    <link rel="icon" type="image/png" href="Brown and White Playful Bubble Tea Logo.svg">
+</head>
+<body>
+    <header class="milky-header">
+        <nav class="milky-nav">
+            <ul class="nav-left">
+                <li><a href="milky.html" class="active">Forside</a></li>
+                <li><a href="produkter.html">Produkter</a></li>
+                <li><a href="om.html">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="logo-center">
+                <img src="Brown and White Playful Bubble Tea Logo.svg" alt="Milky logo" class="logo">
+            </div>
+                        </section>
+            <div class="nav-right">
+                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;" style="margin-right:2.5em;">
+                    <label for="soegInput" class="soeg-label"></label>
+                    <span class="soeg-ikon" aria-hidden="true">🔍</span>
+                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off">
+                </form>
+                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button">
+                    <span class="ikon-bruger"></span>
+                </button>
+                <div id="kurvHeader">
+                    <button id="kurvBtn" type="button" class="ikon-btn" title="Kurv">
+                        <span class="ikon-kurv"></span>
+                        <span id="kurvAntal">0</span>
+                    </button>
+                    <div id="kurvDropdown" class="hidden">
+                        <h3>Din kurv</h3>
+                        <ul id="kurvListe"></ul>
+                        <div id="kurvTotal"></div>
+                        <button id="rydKurv" type="button">Ryd kurv</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="forside-video-container">
+            <div class="forside-overlay">
+                <h1 class="forside-title">Milkshakes</h1>
+                <h2 class="forside-subtitle">made with <span class="heart">❤</span> love</h2>
+                <div class="forside-knapper">
+                    <a href="produkter.html" class="forside-btn primary">Se menu</a>
+                    <a href="om.html" class="forside-btn secondary">Find os</a>
+                </div>
+            </div>
+            <video class="forside-video" src="forside-video.mp4" autoplay loop muted playsinline poster="logo.png" aria-label="Milkshake video baggrund"></video>
+        </div>
+        <!-- Milkshake divider illustration -->
+<div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 0.2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-25 kl. 15.59.11.png" alt="Milkshake illustration divider" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto;">
+
+       <!-- MILKSHAKES SLIDER -->
+        <section class="featured-milkshakes">
+            <h2 class="featured-title">Featured Milkshakes</h2>
+            <div class="featured-slider">
+                <button class="slider-arrow left" aria-label="Forrige milkshake">&#8592;</button>
+                <div class="featured-cards">
+                    <div class="featured-card faded">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/milkshake-2298302_1280.jpg" alt="Raspberry Milkshake">
+                    </div>
+                    <div class="featured-card main">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/milkshake-2298303_1280.jpg" alt="Strawberry Matcha">
+                        <div class="featured-name">Strawberry<br>Matcha</div>
+                    </div>
+                    <div class="featured-card faded">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/milkshake-1238300_1280.jpg" alt="S'mores Milkshake">
+                    </div>
+                </div>
+                <button class="slider-arrow right" aria-label="Næste milkshake">&#8594;</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+         <a href="#produkter" class="featured-menu-btn">Milkshake menu</a>
+            <div class="milkshake-lineup-img" style="margin: 2.5rem auto 0 auto; max-width: 1100px; text-align: center;">
+
+            
+        </section>
+                            <!-- Rullende tekst over billede  -->
+                            <div class="marquee-container">
+                                <div class="marquee">
+                                    <span>
+                                        Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Cookie Dough Fudge &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; 20% OFF Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; 20% OFF Campfire S’mores &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% OFF Cookie Dough Fudge &nbsp; • &nbsp;
+                                        Oreo Dream &nbsp; • &nbsp; Pistachio Bliss &nbsp; • &nbsp; Mango Tango &nbsp; • &nbsp; Blueberry Cheesecake &nbsp; • &nbsp; Caramel Popcorn &nbsp; • &nbsp; Lemon Meringue &nbsp; • &nbsp; 20% OFF Cookie Monster &nbsp; • &nbsp; Bubblegum Blast &nbsp; • &nbsp; Hazelnut Heaven &nbsp; • &nbsp; Rocky Road &nbsp; • &nbsp; Peanut Butter Cup &nbsp; • &nbsp; 20% OFF Strawberry Cheesecake &nbsp; • &nbsp; Banana Split &nbsp; • &nbsp; Marshmallow Magic &nbsp; • &nbsp; Toffee Crunch &nbsp; • &nbsp; Apple Pie &nbsp; • &nbsp; Cherry Delight &nbsp; • &nbsp; Mocha Madness &nbsp; • &nbsp; 20% OFF Caramel Swirl &nbsp; • &nbsp; Licorice Love &nbsp; • &nbsp; Fudge Fantasy &nbsp; • &nbsp;
+                                        Caramel Latte &nbsp; • &nbsp; Maple Walnut &nbsp; • &nbsp; Tiramisu Twist &nbsp; • &nbsp; Choco Banana &nbsp; • &nbsp; Strawberry Shortcake &nbsp; • &nbsp; 20% OFF Pistachio Bliss &nbsp; • &nbsp; Lemon Cheesecake &nbsp; • &nbsp; White Chocolate Raspberry &nbsp; • &nbsp; Black Forest &nbsp; • &nbsp; Brownie Batter &nbsp; • &nbsp; 20% OFF Mango Tango &nbsp; • &nbsp; Birthday Cake &nbsp; • &nbsp; Caramel Macchiato &nbsp; • &nbsp; S'mores Supreme &nbsp; • &nbsp; Cherry Cheesecake &nbsp; • &nbsp; Almond Joy &nbsp; • &nbsp; 20% OFF Blueberry Cheesecake &nbsp; • &nbsp;
+                                        Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Cookie Dough Fudge &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; 20% OFF Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; 20% OFF Campfire S’mores &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% OFF Cookie Dough Fudge &nbsp; • &nbsp;
+                                    </span>
+                                    <span>
+                                        Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Cookie Dough Fudge &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; 20% OFF Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; 20% OFF Campfire S’mores &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% OFF Cookie Dough Fudge &nbsp; • &nbsp;
+                                        Oreo Dream &nbsp; • &nbsp; Pistachio Bliss &nbsp; • &nbsp; Mango Tango &nbsp; • &nbsp; Blueberry Cheesecake &nbsp; • &nbsp; Caramel Popcorn &nbsp; • &nbsp; Lemon Meringue &nbsp; • &nbsp; 20% OFF Cookie Monster &nbsp; • &nbsp; Bubblegum Blast &nbsp; • &nbsp; Hazelnut Heaven &nbsp; • &nbsp; Rocky Road &nbsp; • &nbsp; Peanut Butter Cup &nbsp; • &nbsp; 20% OFF Strawberry Cheesecake &nbsp; • &nbsp; Banana Split &nbsp; • &nbsp; Marshmallow Magic &nbsp; • &nbsp; Toffee Crunch &nbsp; • &nbsp; Apple Pie &nbsp; • &nbsp; Cherry Delight &nbsp; • &nbsp; Mocha Madness &nbsp; • &nbsp; 20% OFF Caramel Swirl &nbsp; • &nbsp; Licorice Love &nbsp; • &nbsp; Fudge Fantasy &nbsp; • &nbsp;
+                                        Caramel Latte &nbsp; • &nbsp; Maple Walnut &nbsp; • &nbsp; Tiramisu Twist &nbsp; • &nbsp; Choco Banana &nbsp; • &nbsp; Strawberry Shortcake &nbsp; • &nbsp; 20% OFF Pistachio Bliss &nbsp; • &nbsp; Lemon Cheesecake &nbsp; • &nbsp; White Chocolate Raspberry &nbsp; • &nbsp; Black Forest &nbsp; • &nbsp; Brownie Batter &nbsp; • &nbsp; 20% OFF Mango Tango &nbsp; • &nbsp; Birthday Cake &nbsp; • &nbsp; Caramel Macchiato &nbsp; • &nbsp; S'mores Supreme &nbsp; • &nbsp; Cherry Cheesecake &nbsp; • &nbsp; Almond Joy &nbsp; • &nbsp; 20% OFF Blueberry Cheesecake &nbsp; • &nbsp;
+                                        Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Cookie Dough Fudge &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; 20% OFF Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; 20% OFF Campfire S’mores &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% OFF Cookie Dough Fudge &nbsp; • &nbsp;
+                                    </span>
+                                </div>
+                            </div>
+                <img src="Skærmbillede 2026-03-23 kl. 15.12.15.png" alt="Alle Milky milkshakes" style="width: 100vw; max-width: 100vw; min-width: 100vw; height: auto; display: block; margin: 0 calc(-50vw + 50%); box-shadow: 0 4px 32px rgba(0,0,0,0.07); background: #fff0fa;">
+            <!-- Rullende tekst under billedet -->
+            <div class="marquee-container">
+                <div class="marquee reverse">
+                    <span>
+                        20% OFF Cookie Dough Fudge &nbsp; • &nbsp; Campfire S’mores &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; 20% Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% Campfire S’mores &nbsp; • &nbsp;
+                        Oreo Dream &nbsp; • &nbsp; Pistachio Bliss &nbsp; • &nbsp; Mango Tango &nbsp; • &nbsp; Blueberry Cheesecake &nbsp; • &nbsp; Caramel Popcorn &nbsp; • &nbsp; Lemon Meringue &nbsp; • &nbsp; 20% Cookie Monster &nbsp; • &nbsp; Bubblegum Blast &nbsp; • &nbsp; Hazelnut Heaven &nbsp; • &nbsp; Rocky Road &nbsp; • &nbsp; Peanut Butter Cup &nbsp; • &nbsp; 20% Strawberry Cheesecake &nbsp; • &nbsp; Banana Split &nbsp; • &nbsp; Marshmallow Magic &nbsp; • &nbsp; Toffee Crunch &nbsp; • &nbsp; Apple Pie &nbsp; • &nbsp; Cherry Delight &nbsp; • &nbsp; Mocha Madness &nbsp; • &nbsp; 20% Caramel Swirl &nbsp; • &nbsp; Licorice Love &nbsp; • &nbsp; Fudge Fantasy &nbsp; • &nbsp;
+                        Caramel Latte &nbsp; • &nbsp; Maple Walnut &nbsp; • &nbsp; Tiramisu Twist &nbsp; • &nbsp; Choco Banana &nbsp; • &nbsp; Strawberry Shortcake &nbsp; • &nbsp; 20% Pistachio Bliss &nbsp; • &nbsp; Lemon Cheesecake &nbsp; • &nbsp; White Chocolate Raspberry &nbsp; • &nbsp; Black Forest &nbsp; • &nbsp; Brownie Batter &nbsp; • &nbsp; 20% Mango Tango &nbsp; • &nbsp; Birthday Cake &nbsp; • &nbsp; Caramel Macchiato &nbsp; • &nbsp; S'mores Supreme &nbsp; • &nbsp; Cherry Cheesecake &nbsp; • &nbsp; Almond Joy &nbsp; • &nbsp; 20% Blueberry Cheesecake &nbsp; • &nbsp;
+                        20% OFF Cookie Dough Fudge &nbsp; • &nbsp; Campfire S’mores &nbsp; • &nbsp; Cookie Jar &nbsp; • &nbsp; Chocolatier &nbsp; • &nbsp; Raspberries & Cream &nbsp; • &nbsp; Salted Caramel Pretzel &nbsp; • &nbsp; Chocolate Dipped Strawberry &nbsp; • &nbsp; 20% Strawberry Matcha &nbsp; • &nbsp; Confetti Frosted Cupcake &nbsp; • &nbsp; Mint Cookies & Cream &nbsp; • &nbsp; Peanut Butter Brownie &nbsp; • &nbsp; Vanilla &nbsp; • &nbsp; 20% Campfire S’mores &nbsp; • &nbsp;
+                    </header>
+                    <header>
+        
+        </section>
+                    </header>
+                    
+        
+        </section>
+        
+         <!-- Milkshake divider illustration -->
+
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 0.2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-26 kl. 02.16.42.png" alt="Milkshake illustration divider" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto;">
+        </div>
+<div class="footer-copyright" style="text-align:center;">
+            &copy; 2026 Milky. Alle rettigheder forbeholdes.
+        </div>
+    </footer>
+</body>
+</html>
+            </div>
+        </footer>
+    <script src="app.js"></script>
+</body>
+</html>
