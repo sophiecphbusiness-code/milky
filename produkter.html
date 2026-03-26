@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milky Produkter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sdw6rit.css">
+</head>
+<body>
+    <header class="milky-header">
+        <nav class="milky-nav">
+            <button class="burger" id="burgerMenu" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobilNav">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-left" id="mobilNav">
+                <li><a href="milky.html">Forside</a></li>
+                <li><a href="produkter.html" class="active">Produkter</a></li>
+                <li><a href="om.html">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="logo-center">
+                <img src="Brown and White Playful Bubble Tea Logo.svg" alt="Milky logo" class="logo">
+            </div>
+            <div class="nav-right">
+                <form id="soegForm" class="soeg-form" role="search" aria-label="Søg på produkter" onsubmit="return false;">
+                    <label for="soegInput" class="soeg-label">Søg</label>
+                    <span class="soeg-ikon" aria-hidden="true">🔍</span>
+                    <input type="search" id="soegInput" placeholder="Søg produkter, smag, pris..." aria-label="Søg på produkter" autocomplete="off">
+                </form>
+                <button class="ikon-btn" id="brugerBtn" title="Bruger" type="button">
+                    <span class="ikon-bruger"></span>
+                </button>
+                <div id="kurvHeader">
+                    <button id="kurvBtn" type="button" class="ikon-btn" title="Kurv">
+                        <span class="ikon-kurv"></span>
+                        <span id="kurvAntal">0</span>
+                    </button>
+                    <div id="kurvDropdown" class="hidden">
+                        <h3>Din kurv</h3>
+                        <ul id="kurvListe"></ul>
+                        <div id="kurvTotal"></div>
+                        <button id="rydKurv" type="button">Ryd kurv</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Milkshake divider illustration over produkter -->
+        <div style="width:100vw;max-width:100vw;overflow:hidden;margin:0 auto 2rem auto;text-align:center;background:transparent;">
+            <img src="Skærmbillede 2026-03-25 kl. 17.09.36.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+        </div>
+        <h1 class="usp-title usp-title-large">Vores Produkter</h1>
+        <div id="produktListe" class="produkt-list"></div>
+        <aside id="kurvSidebar" class="kurv-sidebar hidden">
+                        <div id="kurvIndhold">
+                            <h2>Din kurv</h2>
+                            <ul id="kurvItems"></ul>
+                            <div style="height:2rem;"></div>
+                            <div id="kurvTotal"></div>
+                        </div>
+                        <button id="betalBtn" class="betal-btn">Gå til betaling</button>
+                        <button id="kurvLuk">Luk</button>
+    
+        </aside>
+    </main>
+    <!-- Milkshake divider illustration under produkterne -->
+    <div style="width:100vw;max-width:100vw;overflow:hidden;margin:2rem auto 0 auto;text-align:center;background:transparent;">
+        <img src="Skærmbillede 2026-03-25 kl. 17.09.36.png" alt="Milkshake illustration divider" style="width:75%;max-width:700px;height:auto;display:block;margin:0 auto;">
+    </div>
+    <script src="produkter.js"></script>
+</main>
+<script>
+    // Burger menu toggle
+    const burger = document.getElementById('burgerMenu');
+    const nav = document.getElementById('mobilNav');
+    burger.addEventListener('click', function() {
+        const open = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+</script>
+</body>
+<div class="footer-copyright" style="text-align:center;">
+            &copy; 2026 Milky. Alle rettigheder forbeholdes.
+        </div>
+    </footer>
+</body>
+</html>
+</html>
